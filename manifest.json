@@ -1,0 +1,34 @@
+{
+  "name": "HappyChrabonszcz",
+  "version": "0.1.0",
+  "description": "Sentiment Analysis Dataset",
+    "permissions": ["storage", "tabs", "activeTab", "scripting"],
+    "host_permissions": ["https://*.messenger.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.messenger.com/*"],
+        "js": ["utils.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/smile.png"
+        ],
+        "matches": ["https://*.messenger.com/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/smile.png",
+        "24": "assets/smile.png",
+        "32": "assets/smile.png"
+      },
+      "default_title": "HappyChrabonszcz",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
